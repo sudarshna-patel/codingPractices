@@ -24,7 +24,7 @@ Gcc = sorted(nx.connected_components(G), key=len, reverse=True)
 GC = G.subgraph(Gcc[0])
 
 # distance distribution in a graph
-paths = pd.DataFrame(nx.all_pairs_shortest_path_length(w_subg))
+paths = pd.DataFrame(nx.all_pairs_shortest_path_length(GC))
 
 l = paths[1].progress_apply(lambda x: list(x.values()))
 ll = l.tolist()
